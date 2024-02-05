@@ -1,0 +1,238 @@
+[gd_scene load_steps=7 format=3 uid="uid://bp5v5xxbheinb"]
+
+[ext_resource type="PackedScene" uid="uid://j0spv2qvop3u" path="res://cenas/player.tscn" id="1_fjghe"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_u6t0n"]
+[ext_resource type="PackedScene" uid="uid://3yvxw6tx08qa" path="res://cenas/tile_map.tscn" id="2_6lgrq"]
+[ext_resource type="FontFile" uid="uid://okptm2esfkrd" path="res://sprites/Fonts/PressStart2P-Regular.ttf" id="2_ho3d7"]
+[ext_resource type="PackedScene" uid="uid://cggnwj63ttat1" path="res://cenas/tree.tscn" id="3_hxxhn"]
+
+[sub_resource type="Curve2D" id="Curve2D_meghi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -51.34, 22.2219, 0, 0, 0, 0, -43.1675, 422.254, 0, 0, 0, 0, 650.325, 407.206)
+}
+point_count = 3
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_u6t0n")
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="ScoreText" type="Label" parent="GUI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = 5.0
+offset_right = 28.0
+offset_bottom = 13.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ho3d7")
+theme_override_font_sizes/font_size = 8
+text = "Score: "
+
+[node name="Score" type="Label" parent="GUI"]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 21.0
+offset_top = 5.0
+offset_right = 61.0
+offset_bottom = 13.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ho3d7")
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="ScoreTimer" type="Timer" parent="GUI"]
+unique_name_in_owner = true
+autostart = true
+
+[node name="PauseButton" type="Button" parent="GUI"]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 20.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_ho3d7")
+theme_override_font_sizes/font_size = 10
+action_mode = 0
+text = "||"
+
+[node name="PauseScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+
+[node name="Fundo" type="ColorRect" parent="PauseScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.376471)
+
+[node name="PauseText" type="Label" parent="PauseScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -50.0
+offset_right = 88.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Paused"
+
+[node name="ContinueButton" type="Button" parent="PauseScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -12.0
+offset_right = 68.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_ho3d7")
+text = "Continue"
+flat = true
+
+[node name="RestartGameButton" type="Button" parent="PauseScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_ho3d7")
+text = "Restart"
+flat = true
+
+[node name="ExitGameButton" type="Button" parent="PauseScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = 52.0
+offset_right = 76.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_ho3d7")
+text = "Exit Game"
+flat = true
+
+[node name="GameOverScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+
+[node name="Fundo" type="ColorRect" parent="GameOverScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.376471)
+
+[node name="GameOverText" type="Label" parent="GameOverScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -44.0
+offset_right = 80.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over!"
+
+[node name="RestartGameButton" type="Button" parent="GameOverScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_ho3d7")
+text = "Restart"
+flat = true
+
+[node name="ExitGameButton" type="Button" parent="GameOverScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = 52.0
+offset_right = 76.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_ho3d7")
+text = "Exit Game"
+flat = true
+
+[node name="TileMap" parent="." instance=ExtResource("2_6lgrq")]
+position = Vector2(-18, 51)
+
+[node name="Player" parent="." instance=ExtResource("1_fjghe")]
+unique_name_in_owner = true
+position = Vector2(283, 201)
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(37.9744, 49.2795)
+scale = Vector2(0.856534, 0.797436)
+curve = SubResource("Curve2D_meghi")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(-51.34, 22.2219)
+rotation = 1.55037
+
+[node name="MobTimer" type="Timer" parent="Path2D/PathFollow2D"]
+autostart = true
+
+[node name="TreeOne" parent="." instance=ExtResource("3_hxxhn")]
+position = Vector2(127, 215)
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[connection signal="timeout" from="GUI/ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="pressed" from="GUI/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="PauseScreen/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="PauseScreen/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
+[connection signal="pressed" from="PauseScreen/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
+[connection signal="pressed" from="GameOverScreen/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
+[connection signal="pressed" from="GameOverScreen/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
+[connection signal="vida_terminou" from="Player" to="." method="_on_player_vida_terminou"]
+[connection signal="timeout" from="Path2D/PathFollow2D/MobTimer" to="." method="_on_mob_timer_timeout"]

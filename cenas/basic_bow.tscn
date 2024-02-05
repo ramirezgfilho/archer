@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv8x6mkxd55f7"]
+
+[ext_resource type="Script" path="res://scripts/basic_bow.gd" id="1_il06o"]
+[ext_resource type="Texture2D" uid="uid://dw0litbmosiaj" path="res://sprites/weapons/bows/basic_bow/bow3.png" id="2_2pqcm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_orkd7"]
+radius = 152.003
+
+[node name="BasicBow" type="Area2D"]
+rotation = -0.0186637
+collision_mask = 2
+script = ExtResource("1_il06o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_orkd7")
+
+[node name="ArchPivot" type="Marker2D" parent="."]
+
+[node name="ShootingPoint" type="Marker2D" parent="ArchPivot"]
+unique_name_in_owner = true
+position = Vector2(8.00279, -0.0746115)
+
+[node name="Sprite2D" type="Sprite2D" parent="ArchPivot"]
+position = Vector2(4.99913, 0.093313)
+rotation = -3.07885
+scale = Vector2(0.477671, 0.477671)
+texture = ExtResource("2_2pqcm")
+
+[node name="ArrowTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
+[connection signal="timeout" from="ArrowTimer" to="." method="_on_arrow_timer_timeout"]

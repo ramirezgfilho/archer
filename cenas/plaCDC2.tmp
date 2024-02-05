@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://j0spv2qvop3u"]
+
+[ext_resource type="Texture2D" uid="uid://cevmx4ec5p3vu" path="res://sprites/player/idle/idle1.png" id="1_b53lf"]
+[ext_resource type="Texture2D" uid="uid://c730jdmfml3cm" path="res://sprites/player/idle/idle2.png" id="2_bsu6m"]
+[ext_resource type="Texture2D" uid="uid://c0hvx4stg365p" path="res://sprites/player/idle/idle3.png" id="3_pbdoq"]
+[ext_resource type="Texture2D" uid="uid://b7g2fknq1o3wg" path="res://sprites/player/idle/idle4.png" id="4_t7l07"]
+
+[sub_resource type="GDScript" id="GDScript_h6jlv"]
+script/source = "extends CharacterBody2D
+
+const SPEED = 300.0
+var health = 100.0
+
+func _physics_process(delta):
+	var direction = Input.get_vector(\"move_left\",\"move_right\",\"move_up\",\"move_down\")
+	velocity = direction * SPEED
+	move_and_slide()
+	
+	if velocity.length() <= 0.0:
+		%AnimatedSprite2D.play(\"idle\")
+	if Input.get_axis(\"move_down\",\"move_up\"):
+		print(\"esquerda!\")
+		
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4evv5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b53lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bsu6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pbdoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t7l07")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qh0b"]
+radius = 7.0
+
+[node name="Player" type="CharacterBody2D"]
+script = SubResource("GDScript_h6jlv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_4evv5")
+animation = &"idle"
+frame_progress = 0.661656
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.915649, 1.15897)
+shape = SubResource("CircleShape2D_7qh0b")

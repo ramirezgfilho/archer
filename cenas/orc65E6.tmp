@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://vj0u42n44svu"]
+
+[ext_resource type="Script" path="res://scripts/orc.gd" id="1_53nqd"]
+[ext_resource type="Texture2D" uid="uid://cq25s6e664f5m" path="res://sprites/mobs/orc/damage/damage1.png" id="2_48jut"]
+[ext_resource type="Texture2D" uid="uid://cfsgfnts7butf" path="res://sprites/mobs/orc/walk/walk1.png" id="2_djoig"]
+[ext_resource type="Texture2D" uid="uid://bwmlhe6wkaqnm" path="res://sprites/mobs/orc/walk/walk2.png" id="3_a3x2f"]
+[ext_resource type="Texture2D" uid="uid://clkf1jdda75a6" path="res://sprites/mobs/orc/damage/damage2.png" id="3_jmpfd"]
+[ext_resource type="Texture2D" uid="uid://cy1gn8a3gij7" path="res://sprites/mobs/orc/walk/walk3.png" id="4_c3lmn"]
+[ext_resource type="Texture2D" uid="uid://bwcvr12jvwyrf" path="res://sprites/mobs/orc/damage/damage3.png" id="4_f7v6v"]
+[ext_resource type="Texture2D" uid="uid://ba663m48pffv0" path="res://sprites/mobs/orc/walk/walk4.png" id="5_edsql"]
+[ext_resource type="Texture2D" uid="uid://bi3ubpr8qg1n5" path="res://sprites/mobs/orc/damage/damage4.png" id="5_myc1j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3gvka"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_48jut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jmpfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f7v6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_myc1j")
+}],
+"loop": true,
+"name": &"damage",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_djoig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a3x2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c3lmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_edsql")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbxco"]
+size = Vector2(5, 5)
+
+[node name="Orc" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+platform_floor_layers = 4294901762
+script = ExtResource("1_53nqd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_3gvka")
+animation = &"damage"
+autoplay = "default"
+frame_progress = 0.776736
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_hbxco")
+
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

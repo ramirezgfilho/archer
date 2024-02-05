@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://qtpnm46vppmu"]
+
+[ext_resource type="Script" path="res://scripts/arrow.gd" id="1_f7x4y"]
+[ext_resource type="Texture2D" uid="uid://dhniqu67j8hil" path="res://sprites/arrow/arrow_0.png" id="2_h2ftc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbbdx"]
+size = Vector2(6.5, 8.5)
+
+[node name="Arrow" type="Area2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_f7x4y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -1.19209e-07)
+rotation = 1.5708
+scale = Vector2(0.461546, 0.461546)
+texture = ExtResource("2_h2ftc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -1)
+shape = SubResource("RectangleShape2D_qbbdx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0.999999, -14)
+
+[node name="VentoDaFlecha" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1, -1)
+emitting = false
+amount = 4
+lifetime = 0.2
+explosiveness = 0.7
+emission_shape = 3
+emission_rect_extents = Vector2(0.685, 2.98)
+particle_flag_align_y = true
+spread = 1.0
+gravity = Vector2(0, -100)
+color = Color(0.733333, 1, 1, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
