@@ -16,6 +16,10 @@ func _physics_process(delta):
 	
 	if score > 5:
 		basic_bow.basic_damage = 3
+		
+	## A cada 100 diminui o tempo de spawnar o mob.
+	if score % 100 == 0: 
+		print(%MobTimer.wait_time) 
 	
 	
 	##var bow = %Player.find_child("BasicBow")
