@@ -25,10 +25,6 @@ window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 window/vsync/vsync_mode=2
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/nklbdev.aseprite_importers/plugin.cfg")
-
 [gui]
 
 theme/custom_font="res://sprites/Fonts/PressStart2P-Regular.ttf"

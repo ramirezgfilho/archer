@@ -1,5 +1,11 @@
 extends Area2D
 
+@export_group("Bow proprieties")
+@export var basic_damage = 1
+@export var arrow_speed = 1
+@export var range = 1
+
+
 func _physics_process(delta):
 	var enemies_in_range = get_overlapping_bodies()
 	if enemies_in_range.size() > 0:

@@ -92,6 +92,8 @@ signal vida_terminou
 @export var RUN_SPEED = 110.0
 
 var basic_bow = preload(\"res://cenas/basic_bow.tscn\")
+var orc = preload(\"res://cenas/orc.tscn\")
+
 
 var health = 100.0
 var stamina = 100.0
@@ -110,7 +112,7 @@ func _physics_process(delta):
 	
 	var mobs_encostando = %HurtBox.get_overlapping_bodies()
 	if mobs_encostando.size() > 0:
-		health -= DAMAGE_RATE * mobs_encostando.size() * delta
+		health -= orc.attack_power * mobs_encostando.size() * delta
 		%Health.value = health
 	
 	if health <= 0.0: 

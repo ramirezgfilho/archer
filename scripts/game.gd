@@ -2,7 +2,7 @@ extends Node2D
 
 var score = 0
 
-var basic_bow = preload("res://cenas/basic_bow.tscn")
+@onready var basic_bow = get_node("Player/BasicBow")
 
 
 func spawn_mob():
@@ -13,6 +13,9 @@ func spawn_mob():
 
 func _physics_process(delta):
 	%Score.set_text(str(score))
+	
+	if score > 5:
+		basic_bow.basic_damage = 3
 	
 	
 	##var bow = %Player.find_child("BasicBow")

@@ -2,9 +2,10 @@ extends CharacterBody2D
 
 signal orc_morreu
 
-var life = 1
+var life = 3
 #Aanotação usada que espera a árvore de nodes ser criada para ser executada
 @onready var player = get_node("/root/Game/Player")
+@onready var bow = get_node("/root/Game/Player/BasicBow")
 
 #Define o processo de física
 func _physics_process(delta):
@@ -19,7 +20,7 @@ func _on_orc_mob_died():
 
 func take_damage():
 	%AnimatedSprite2D.play("damage")
-	life -= 1
+	life -= bow.basic_damage
 	##%HurtAudio.playing = true
 	##%Slime.play_hurt()
 	

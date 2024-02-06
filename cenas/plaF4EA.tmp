@@ -92,6 +92,8 @@ signal vida_terminou
 @export var RUN_SPEED = 110.0
 
 var basic_bow = preload(\"res://cenas/basic_bow.tscn\")
+var orc = preload(\"res://cenas/orc.tscn\")
+
 
 var health = 100.0
 var stamina = 100.0

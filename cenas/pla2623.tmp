@@ -87,11 +87,12 @@ script/source = "extends CharacterBody2D
 
 signal vida_terminou
 
-@export var DAMAGE_RATE = 15.0
-@export var SPEED = 100.0
-@export var RUN_SPEED = 110.0
+const DAMAGE_RATE = 15.0
+const SPEED = 100.0
+const RUN_SPEED = 120.0
 
 var basic_bow = preload(\"res://cenas/basic_bow.tscn\")
+
 
 var health = 100.0
 var stamina = 100.0
@@ -136,10 +137,20 @@ func _physics_process(delta):
 		if velocity == Vector2(0, 100):
 			%AnimatedSprite2D.play(\"walk_r\")
 			
+
 ##Fução para recuperação da Stamina
 func _on_stamina_recover_timeout():
 	if stamina <= 100:
 		stamina += 10 
+
+
+func _on_collect_weapon_box_area_entered(area):
+	if area.name == \"BasicBow\":
+		print(area.name)
+
+
+func _on_collect_weapon_box_area_exited(area):
+	print(\"item saiu de vista\") # Replace with function body.
 "
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4evv5"]
@@ -448,7 +459,6 @@ bg_color = Color(0.0823529, 0.768627, 0.741176, 1)
 [node name="Player" type="CharacterBody2D"]
 platform_floor_layers = 4294901761
 script = SubResource("GDScript_h6jlv")
-RUN_SPEED = 120.0
 
 [node name="BasicBow" parent="." instance=ExtResource("81_0pnah")]
 
@@ -521,3 +531,5 @@ shape = SubResource("CircleShape2D_f7ra3")
 debug_color = Color(0, 0.639216, 0.34902, 0.419608)
 
 [connection signal="timeout" from="StaminaBar/StaminaRecover" to="." method="_on_stamina_recover_timeout"]
+[connection signal="area_entered" from="CollectWeaponBox" to="." method="_on_collect_weapon_box_area_entered"]
+[connection signal="area_exited" from="CollectWeaponBox" to="." method="_on_collect_weapon_box_area_exited"]

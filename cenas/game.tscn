@@ -221,6 +221,7 @@ position = Vector2(-51.34, 22.2219)
 rotation = 1.55037
 
 [node name="MobTimer" type="Timer" parent="Path2D/PathFollow2D"]
+wait_time = 2.0
 autostart = true
 
 [node name="TreeOne" parent="." instance=ExtResource("3_hxxhn")]
