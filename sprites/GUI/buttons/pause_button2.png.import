@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn7082nut8vxt"
-path="res://.godot/imported/forest_ [fountain].png-dc4c442406f46cdc2e5bb0818a72a604.ctex"
+uid="uid://ds881alq8o0w2"
+path="res://.godot/imported/pause_button2.png-b738b794929e5bbd70cef2ac3e5b0d24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/screen/forest_ [fountain].png"
-dest_files=["res://.godot/imported/forest_ [fountain].png-dc4c442406f46cdc2e5bb0818a72a604.ctex"]
+source_file="res://sprites/GUI/buttons/pause_button2.png"
+dest_files=["res://.godot/imported/pause_button2.png-b738b794929e5bbd70cef2ac3e5b0d24.ctex"]
 
 [params]
 
