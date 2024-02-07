@@ -4,8 +4,7 @@
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_u6t0n"]
 [ext_resource type="FontFile" uid="uid://okptm2esfkrd" path="res://sprites/Fonts/PressStart2P-Regular.ttf" id="2_ho3d7"]
 [ext_resource type="PackedScene" uid="uid://dtq1t3yhbxpwq" path="res://map/map2/FirstMap.tscn" id="3_fjh3o"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_uboro"]
+[ext_resource type="Texture2D" uid="uid://dmsc26jjwgaoa" path="res://sprites/GUI/buttons/pause_button.png" id="3_l88ir"]
 
 [sub_resource type="Curve2D" id="Curve2D_meghi"]
 _data = {
@@ -54,16 +53,14 @@ unique_name_in_owner = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -30.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = 20.0
+offset_left = -28.0
+offset_bottom = 28.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_ho3d7")
 theme_override_font_sizes/font_size = 10
 action_mode = 0
-text = "||"
-icon = SubResource("ViewportTexture_uboro")
+icon = ExtResource("3_l88ir")
+flat = true
 
 [node name="PauseScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -209,6 +206,8 @@ flat = true
 [node name="Player" parent="." instance=ExtResource("1_fjghe")]
 unique_name_in_owner = true
 position = Vector2(-208, -245)
+SPEED = 80.0
+RUN_SPEED = 80.0
 
 [node name="Path2D" type="Path2D" parent="."]
 visible = false
