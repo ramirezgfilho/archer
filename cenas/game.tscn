@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bp5v5xxbheinb"]
+[gd_scene load_steps=6 format=3 uid="uid://bp5v5xxbheinb"]
 
 [ext_resource type="PackedScene" uid="uid://j0spv2qvop3u" path="res://cenas/player.tscn" id="1_fjghe"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_u6t0n"]
-[ext_resource type="PackedScene" uid="uid://3yvxw6tx08qa" path="res://cenas/tile_map.tscn" id="2_6lgrq"]
 [ext_resource type="FontFile" uid="uid://okptm2esfkrd" path="res://sprites/Fonts/PressStart2P-Regular.ttf" id="2_ho3d7"]
-[ext_resource type="PackedScene" uid="uid://cggnwj63ttat1" path="res://cenas/tree.tscn" id="3_hxxhn"]
+[ext_resource type="PackedScene" uid="uid://dtq1t3yhbxpwq" path="res://map/map2/FirstMap.tscn" id="3_fjh3o"]
 
 [sub_resource type="Curve2D" id="Curve2D_meghi"]
 _data = {
@@ -13,7 +12,6 @@ _data = {
 point_count = 3
 
 [node name="Game" type="Node2D"]
-y_sort_enabled = true
 script = ExtResource("1_u6t0n")
 
 [node name="GUI" type="CanvasLayer" parent="."]
@@ -203,12 +201,12 @@ theme_override_fonts/font = ExtResource("2_ho3d7")
 text = "Exit Game"
 flat = true
 
-[node name="TileMap" parent="." instance=ExtResource("2_6lgrq")]
-position = Vector2(-18, 51)
+[node name="FirstMap" parent="." instance=ExtResource("3_fjh3o")]
 
 [node name="Player" parent="." instance=ExtResource("1_fjghe")]
 unique_name_in_owner = true
 position = Vector2(283, 201)
+SPEED = 100.0
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(37.9744, 49.2795)
@@ -223,9 +221,6 @@ rotation = 1.55037
 [node name="MobTimer" type="Timer" parent="Path2D/PathFollow2D"]
 wait_time = 2.0
 autostart = true
-
-[node name="TreeOne" parent="." instance=ExtResource("3_hxxhn")]
-position = Vector2(127, 215)
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="timeout" from="GUI/ScoreTimer" to="." method="_on_score_timer_timeout"]

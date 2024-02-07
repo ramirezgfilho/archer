@@ -448,6 +448,7 @@ bg_color = Color(0.0823529, 0.768627, 0.741176, 1)
 [node name="Player" type="CharacterBody2D"]
 platform_floor_layers = 4294901761
 script = SubResource("GDScript_h6jlv")
+SPEED = 200.0
 RUN_SPEED = 120.0
 
 [node name="BasicBow" parent="." instance=ExtResource("81_0pnah")]
@@ -462,7 +463,7 @@ animation = &"idle_up_l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6.3777e-06)
-scale = Vector2(0.510995, 0.645604)
+scale = Vector2(0.188728, 0.629641)
 shape = SubResource("RectangleShape2D_xaysx")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
