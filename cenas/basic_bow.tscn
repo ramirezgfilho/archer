@@ -7,10 +7,12 @@ radius = 152.003
 
 [node name="BasicBow" type="Area2D"]
 rotation = -0.0186637
+collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_il06o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.03986, 2.03986)
 shape = SubResource("CircleShape2D_orkd7")
 
 [node name="ArchPivot" type="Marker2D" parent="."]

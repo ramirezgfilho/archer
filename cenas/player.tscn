@@ -110,6 +110,7 @@ func _physics_process(delta):
 	
 	var mobs_encostando = %HurtBox.get_overlapping_bodies()
 	if mobs_encostando.size() > 0:
+		print(%HurtBox.get_overlapping_bodies())
 		health -= DAMAGE_RATE * mobs_encostando.size() * delta
 		%Health.value = health
 	
@@ -426,7 +427,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xaysx"]
-size = Vector2(11.7418, 9.29364)
+size = Vector2(26.4932, 9.29364)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c657i"]
 size = Vector2(8, 8)
@@ -446,10 +447,9 @@ bg_color = Color(0.0823529, 0.768627, 0.741176, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_f7ra3"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 5
 platform_floor_layers = 4294901761
 script = SubResource("GDScript_h6jlv")
-SPEED = 200.0
-RUN_SPEED = 120.0
 
 [node name="BasicBow" parent="." instance=ExtResource("81_0pnah")]
 
@@ -462,8 +462,8 @@ sprite_frames = SubResource("SpriteFrames_4evv5")
 animation = &"idle_up_l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6.3777e-06)
-scale = Vector2(0.188728, 0.629641)
+position = Vector2(0.5, 6.3777e-06)
+scale = Vector2(0.148728, 0.629641)
 shape = SubResource("RectangleShape2D_xaysx")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]

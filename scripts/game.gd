@@ -5,6 +5,7 @@ var score = 0
 @onready var basic_bow = get_node("Player/BasicBow")
 
 
+
 func spawn_mob():
 	var new_mob = preload("res://cenas/orc.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()
@@ -19,7 +20,7 @@ func _physics_process(delta):
 		
 	## A cada 100 diminui o tempo de spawnar o mob.
 	if score % 100 == 0: 
-		print(%MobTimer.wait_time) 
+		pass ##print(%MobTimer.wait_time) 
 	
 	
 	##var bow = %Player.find_child("BasicBow")
