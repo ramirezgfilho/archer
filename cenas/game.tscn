@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp5v5xxbheinb"]
+[gd_scene load_steps=7 format=3 uid="uid://bp5v5xxbheinb"]
 
 [ext_resource type="PackedScene" uid="uid://j0spv2qvop3u" path="res://cenas/player.tscn" id="1_fjghe"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_u6t0n"]
 [ext_resource type="FontFile" uid="uid://okptm2esfkrd" path="res://sprites/Fonts/PressStart2P-Regular.ttf" id="2_ho3d7"]
 [ext_resource type="PackedScene" uid="uid://dtq1t3yhbxpwq" path="res://map/map2/FirstMap.tscn" id="3_fjh3o"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_uboro"]
 
 [sub_resource type="Curve2D" id="Curve2D_meghi"]
 _data = {
@@ -61,6 +63,7 @@ theme_override_fonts/font = ExtResource("2_ho3d7")
 theme_override_font_sizes/font_size = 10
 action_mode = 0
 text = "||"
+icon = SubResource("ViewportTexture_uboro")
 
 [node name="PauseScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -208,6 +211,7 @@ unique_name_in_owner = true
 position = Vector2(-208, -245)
 
 [node name="Path2D" type="Path2D" parent="."]
+visible = false
 position = Vector2(-399.562, -365.516)
 scale = Vector2(0.651308, 0.370649)
 curve = SubResource("Curve2D_meghi")

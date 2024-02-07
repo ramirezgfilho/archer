@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw0litbmosiaj"
-path="res://.godot/imported/bow3.png-55733d1f4bfa832b061640c2af5dd3d6.ctex"
+uid="uid://dt0007uughy67"
+path="res://.godot/imported/weapons_.png-426f462f1aba28486e87ac16399f3f04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/weapons/bows/basic_bow/bow3.png"
-dest_files=["res://.godot/imported/bow3.png-55733d1f4bfa832b061640c2af5dd3d6.ctex"]
+source_file="res://sprites/weapons/bows/basic_bow/weapons_.png"
+dest_files=["res://.godot/imported/weapons_.png-426f462f1aba28486e87ac16399f3f04.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
