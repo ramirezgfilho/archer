@@ -14,6 +14,7 @@ script = ExtResource("1_f7x4y")
 arrow_speed = 200
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(-2, -1.19209e-07)
 rotation = 1.5708
 scale = Vector2(0.461546, 0.461546)

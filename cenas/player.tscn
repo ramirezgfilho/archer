@@ -458,6 +458,7 @@ limit_smoothed = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_4evv5")
 animation = &"idle_up_l"
 
