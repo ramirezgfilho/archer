@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bp5v5xxbheinb"]
+[gd_scene load_steps=13 format=3 uid="uid://bp5v5xxbheinb"]
 
 [ext_resource type="PackedScene" uid="uid://j0spv2qvop3u" path="res://cenas/player.tscn" id="1_fjghe"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_u6t0n"]
@@ -10,18 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://ckwngsrvtwpt6" path="res://sprites/GUI/buttons/continue_button.png" id="5_obi2b"]
 [ext_resource type="Texture2D" uid="uid://cor4kld3suqfx" path="res://sprites/GUI/buttons/restartButton.png" id="5_p3gl0"]
 [ext_resource type="Texture2D" uid="uid://co4vcf0kn8wvg" path="res://sprites/GUI/buttons/exitButton.png" id="6_v0cdm"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttm5a"]
-bg_color = Color(0.913725, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlugn"]
-bg_color = Color(0.0352941, 0.721569, 0.243137, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3rfq"]
-bg_color = Color(0.776471, 0.780392, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ja5ko"]
-bg_color = Color(0, 0.831373, 0.768627, 1)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_gbcgg"]
 
@@ -41,28 +29,6 @@ texture_filter = 1
 position = Vector2(60.5, 24.5)
 scale = Vector2(1.42308, 1.42308)
 texture = ExtResource("2_pp01f")
-
-[node name="PlayerHealth" type="ProgressBar" parent="GUI"]
-unique_name_in_owner = true
-offset_left = 42.0
-offset_top = 9.0
-offset_right = 111.0
-offset_bottom = 14.0
-theme_override_styles/background = SubResource("StyleBoxFlat_ttm5a")
-theme_override_styles/fill = SubResource("StyleBoxFlat_mlugn")
-value = 100.0
-show_percentage = false
-
-[node name="PlayerStamina" type="ProgressBar" parent="GUI"]
-unique_name_in_owner = true
-offset_left = 42.0
-offset_top = 18.0
-offset_right = 102.0
-offset_bottom = 23.0
-theme_override_styles/background = SubResource("StyleBoxFlat_o3rfq")
-theme_override_styles/fill = SubResource("StyleBoxFlat_ja5ko")
-value = 100.0
-show_percentage = false
 
 [node name="Score" type="Label" parent="GUI"]
 unique_name_in_owner = true
@@ -96,6 +62,16 @@ action_mode = 0
 icon = ExtResource("3_l88ir")
 flat = true
 icon_alignment = 1
+
+[node name="PlayerHealth" type="ProgressBar" parent="GUI"]
+unique_name_in_owner = true
+offset_right = 4.0
+offset_bottom = 20.0
+
+[node name="PlayerStamina" type="ProgressBar" parent="GUI"]
+unique_name_in_owner = true
+offset_right = 4.0
+offset_bottom = 20.0
 
 [node name="PauseScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -217,83 +193,61 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.376471)
 
-[node name="ItemList" type="ItemList" parent="GameOverScreen"]
+[node name="GameOverText" type="Label" parent="GameOverScreen"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -187.0
-offset_top = -141.5
-offset_right = 187.0
-offset_bottom = 141.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Base" type="Sprite2D" parent="GameOverScreen/ItemList"]
-texture_filter = 1
-position = Vector2(187, 140.5)
-scale = Vector2(1.86413, 1.86413)
-texture = ExtResource("4_li3i3")
-
-[node name="GameOver" type="Label" parent="GameOverScreen"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -85.0
-offset_top = 57.0
-offset_right = 75.0
-offset_bottom = 73.0
-grow_horizontal = 2
-text = "Game over!"
-
-[node name="RestartGameButton" type="Button" parent="GameOverScreen"]
-texture_filter = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -53.0
-offset_top = -72.0
-offset_right = 53.0
+offset_left = -80.0
+offset_top = -44.0
+offset_right = 80.0
 offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "Game Over!"
+
+[node name="RestartGameButton" type="Button" parent="GameOverScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_ho3d7")
-icon = ExtResource("5_p3gl0")
+text = "Restart"
 flat = true
-icon_alignment = 1
-expand_icon = true
 
 [node name="ExitGameButton" type="Button" parent="GameOverScreen"]
-texture_filter = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -53.0
-offset_top = -208.0
-offset_right = 53.0
-offset_bottom = -164.0
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = 52.0
+offset_right = 76.0
+offset_bottom = 76.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_ho3d7")
-icon = ExtResource("6_v0cdm")
+text = "Exit Game"
 flat = true
-icon_alignment = 1
-expand_icon = true
 
 [node name="FirstMap" parent="." instance=ExtResource("3_fjh3o")]
 
 [node name="Player" parent="." instance=ExtResource("1_fjghe")]
 unique_name_in_owner = true
 position = Vector2(-208, -245)
+DAMAGE_RATE = 15.0
+SPEED = 100.0
 RUN_SPEED = 80.0
 
 [node name="Path2D" type="Path2D" parent="."]

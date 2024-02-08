@@ -3,6 +3,7 @@ extends Node2D
 var score = 0
 
 @onready var basic_bow = get_node("Player/BasicBow")
+@onready var player = get_node("Player")
 
 
 
@@ -14,6 +15,10 @@ func spawn_mob():
 
 func _physics_process(delta):
 	%Score.set_text(str(score))
+	%PlayerHealth.value = player.health
+	%PlayerStamina.value = player.stamina
+	
+	
 	
 	if score > 5:
 		basic_bow.basic_damage = 3
