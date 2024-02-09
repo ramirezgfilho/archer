@@ -51,6 +51,7 @@ animations = [{
 size = Vector2(5, 5)
 
 [node name="Orc" type="CharacterBody2D"]
+texture_filter = 1
 collision_layer = 3
 collision_mask = 3
 platform_floor_layers = 4294901762
@@ -59,9 +60,7 @@ script = ExtResource("1_53nqd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_3gvka")
-animation = &"damage"
 autoplay = "default"
-frame_progress = 0.776736
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -0.5)

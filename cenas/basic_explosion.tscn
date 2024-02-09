@@ -55,6 +55,7 @@ libraries = {
 speed_scale = 8.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(0, -2.84217e-14)
 scale = Vector2(0.375, 0.375)
-texture = ExtResource("7_kgsnr")
+texture = ExtResource("1_vpfdd")

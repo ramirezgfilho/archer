@@ -1,13 +1,13 @@
 extends Area2D
 
 @export_group("Bow proprieties")
-@export var basic_damage = 1
+@export var basic_damage = 3
 @export var arrow_speed = 1
 @export var range = 1
-
+var enemies_in_range
 
 func _physics_process(delta):
-	var enemies_in_range = get_overlapping_bodies()
+	enemies_in_range = get_overlapping_bodies()
 	if enemies_in_range.size() > 0:
 		var target_enemy = enemies_in_range.front()
 		look_at(target_enemy.global_position)
@@ -21,4 +21,5 @@ func shoot():
 	%ShootingPoint.add_child(new_bullet)
 
 func _on_arrow_timer_timeout():
+	if(enemies_in_range.size() > 0):
 		shoot()
