@@ -2,7 +2,6 @@ extends Node
 
 var score = 0
 @export var level_timer = 0
-@export var dificulty_level = 0
 
 func _on_score_timer_timeout():
 	aumenta_score(1)
