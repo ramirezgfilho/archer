@@ -1,29 +1,95 @@
-[gd_scene load_steps=22 format=3 uid="uid://bp5v5xxbheinb"]
+[gd_scene load_steps=24 format=3 uid="uid://bp5v5xxbheinb"]
 
 [ext_resource type="PackedScene" uid="uid://j0spv2qvop3u" path="res://cenas/player.tscn" id="1_fjghe"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_u6t0n"]
 [ext_resource type="Script" path="res://cenas/LevelController.gd" id="2_1qbbs"]
 [ext_resource type="FontFile" uid="uid://okptm2esfkrd" path="res://sprites/Fonts/PressStart2P-Regular.ttf" id="2_ho3d7"]
-[ext_resource type="Texture2D" uid="uid://wjh25w1qhhog" path="res://sprites/GUI/player_panel.png" id="2_pp01f"]
+[ext_resource type="Texture2D" uid="uid://75m2jrmlgn7b" path="res://sprites/GUI/avatar.png" id="3_ar52p"]
 [ext_resource type="PackedScene" uid="uid://dtq1t3yhbxpwq" path="res://map/map2/FirstMap.tscn" id="3_fjh3o"]
-[ext_resource type="Texture2D" uid="uid://dmsc26jjwgaoa" path="res://sprites/GUI/buttons/pause_button.png" id="3_l88ir"]
 [ext_resource type="Texture2D" uid="uid://cm3wdt7rj0jr5" path="res://sprites/GUI/buttons/base.png" id="4_li3i3"]
 [ext_resource type="Texture2D" uid="uid://cor4kld3suqfx" path="res://sprites/GUI/buttons/restartButton.png" id="5_p3gl0"]
 [ext_resource type="Texture2D" uid="uid://co4vcf0kn8wvg" path="res://sprites/GUI/buttons/exitButton.png" id="6_v0cdm"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttm5a"]
-bg_color = Color(0.913725, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n8pa"]
+bg_color = Color(0.490196, 0.631373, 0.752941, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlugn"]
-bg_color = Color(0.0352941, 0.721569, 0.243137, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwiw7"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+anti_aliasing_size = 0.01
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3rfq"]
 bg_color = Color(0.776471, 0.780392, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ja5ko"]
 bg_color = Color(0, 0.831373, 0.768627, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_gbcgg"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttm5a"]
+bg_color = Color(0.913725, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlugn"]
+bg_color = Color(0.0352941, 0.721569, 0.243137, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j23vw"]
+bg_color = Color(0.490196, 0.631373, 0.752941, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvspl"]
+bg_color = Color(0.0980392, 0.705882, 0.498039, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
 
 [sub_resource type="Theme" id="Theme_iwdqs"]
 default_font = ExtResource("2_ho3d7")
@@ -64,119 +130,186 @@ autostart = true
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
-[node name="PlayerPanel" type="Sprite2D" parent="GUI"]
+[node name="Control" type="Control" parent="GUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerInfoBox" type="Panel" parent="GUI/Control"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 110.0
+offset_bottom = 46.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5n8pa")
+
+[node name="AvatarFrame" type="Panel" parent="GUI/Control/PlayerInfoBox"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -14.5
+offset_right = 34.0
+offset_bottom = 14.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iwiw7")
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Control/PlayerInfoBox/AvatarFrame"]
 texture_filter = 1
-position = Vector2(60.5, 24.5)
-scale = Vector2(1.42308, 1.42308)
-texture = ExtResource("2_pp01f")
+layout_mode = 0
+offset_left = -7.0
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 39.0
+texture = ExtResource("3_ar52p")
+expand_mode = 1
 
-[node name="PlayerHealth" type="ProgressBar" parent="GUI"]
+[node name="PlayerStamina" type="ProgressBar" parent="GUI/Control/PlayerInfoBox"]
 unique_name_in_owner = true
-offset_left = 42.0
-offset_top = 9.0
-offset_right = 111.0
-offset_bottom = 14.0
-theme_override_styles/background = SubResource("StyleBoxFlat_ttm5a")
-theme_override_styles/fill = SubResource("StyleBoxFlat_mlugn")
-value = 100.0
-show_percentage = false
-
-[node name="PlayerStamina" type="ProgressBar" parent="GUI"]
-unique_name_in_owner = true
-offset_left = 42.0
-offset_top = 18.0
-offset_right = 102.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -3.5
+offset_right = -5.0
+offset_bottom = 1.5
+grow_horizontal = 0
+grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_o3rfq")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ja5ko")
 value = 100.0
 show_percentage = false
 
-[node name="Score" type="Label" parent="GUI"]
+[node name="PlayerHealth" type="ProgressBar" parent="GUI/Control/PlayerInfoBox"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -11.5
+offset_right = -5.0
+offset_bottom = -6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ttm5a")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mlugn")
+value = 100.0
+show_percentage = false
+
+[node name="Score" type="Label" parent="GUI/Control/PlayerInfoBox"]
 unique_name_in_owner = true
 texture_filter = 1
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -266.0
-offset_top = 30.0
-offset_right = -226.0
-offset_bottom = 38.0
+offset_left = 6.5
+offset_top = 25.0
+offset_right = 46.5
+offset_bottom = 33.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_ho3d7")
 theme_override_font_sizes/font_size = 8
 text = "0"
 
-[node name="ScoreTimer" type="Timer" parent="GUI"]
+[node name="ScoreTimer" type="Timer" parent="GUI/Control"]
 unique_name_in_owner = true
 
-[node name="PauseButton" type="Button" parent="GUI"]
+[node name="PauseButton" type="Button" parent="GUI/Control"]
 unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -28.0
-offset_bottom = 28.0
+offset_left = 547.0
+offset_top = 6.0
+offset_right = 593.0
+offset_bottom = 29.0
 grow_horizontal = 0
 mouse_force_pass_scroll_events = false
-theme_override_styles/hover = SubResource("StyleBoxLine_gbcgg")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_j23vw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xvspl")
 action_mode = 0
-icon = ExtResource("3_l88ir")
-flat = true
-icon_alignment = 1
+text = "Pause"
 
-[node name="Timer" type="Label" parent="GUI"]
+[node name="Timer" type="Label" parent="GUI/Control"]
 unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
+offset_left = 280.0
 offset_top = 3.0
-offset_right = 22.0
+offset_right = 322.0
 offset_bottom = 19.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 8
 
 [node name="PauseScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 process_mode = 3
 
-[node name="Fundo" type="ColorRect" parent="PauseScreen"]
+[node name="Control" type="Control" parent="PauseScreen"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 644.0
+offset_bottom = 364.0
+
+[node name="Fundo" type="ColorRect" parent="PauseScreen/Control"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.376471)
 
-[node name="ItemList" type="ItemList" parent="PauseScreen"]
+[node name="MenuBox" type="Panel" parent="PauseScreen/Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -187.0
-offset_top = -141.5
-offset_right = 187.0
-offset_bottom = 141.5
+offset_left = -133.0
+offset_top = -114.0
+offset_right = 146.0
+offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = SubResource("Theme_iwdqs")
 
-[node name="PauseText" type="Label" parent="PauseScreen/ItemList"]
+[node name="PauseText" type="Label" parent="PauseScreen/Control/MenuBox"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -85.0
-offset_top = 15.5
-offset_right = 91.0
-offset_bottom = 31.5
+offset_left = -44.0
+offset_right = 44.0
+offset_bottom = 8.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 8
 text = "Game Paused"
 
-[node name="ContinueButton" type="Button" parent="PauseScreen/ItemList"]
+[node name="ContinueButton" type="Button" parent="PauseScreen/Control/MenuBox"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -184,23 +317,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -68.0
-offset_top = -70.0
-offset_right = 68.0
-offset_bottom = -30.0
+offset_left = -36.0
+offset_top = -8.0
+offset_right = 36.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 theme = SubResource("Theme_xuv4m")
 theme_override_colors/font_hover_color = Color(0, 0.615686, 0.588235, 1)
 theme_override_fonts/font = ExtResource("2_ho3d7")
+theme_override_font_sizes/font_size = 8
 theme_override_styles/hover = SubResource("StyleBoxFlat_17mqo")
 text = "Continue"
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="RestartGameButton" type="Button" parent="PauseScreen/ItemList"]
+[node name="RestartGameButton" type="Button" parent="PauseScreen/Control/MenuBox"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -216,12 +350,13 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_ho3d7")
+theme_override_font_sizes/font_size = 8
 text = "Restart"
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="ExitGameButton" type="Button" parent="PauseScreen/ItemList"]
+[node name="ExitGameButton" type="Button" parent="PauseScreen/Control/MenuBox"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -237,6 +372,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_ho3d7")
+theme_override_font_sizes/font_size = 8
 text = "Exit"
 flat = true
 icon_alignment = 1
@@ -375,11 +511,11 @@ rotation = 0.0250087
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="timeout" from="LevelController/GameTimer" to="LevelController" method="_on_game_timer_timeout"]
-[connection signal="timeout" from="GUI/ScoreTimer" to="LevelController" method="_on_score_timer_timeout"]
-[connection signal="pressed" from="GUI/PauseButton" to="." method="_on_pause_button_pressed"]
-[connection signal="pressed" from="PauseScreen/ItemList/ContinueButton" to="." method="_on_continue_button_pressed"]
-[connection signal="pressed" from="PauseScreen/ItemList/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
-[connection signal="pressed" from="PauseScreen/ItemList/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
+[connection signal="timeout" from="GUI/Control/ScoreTimer" to="LevelController" method="_on_score_timer_timeout"]
+[connection signal="pressed" from="GUI/Control/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="PauseScreen/Control/MenuBox/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="PauseScreen/Control/MenuBox/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
+[connection signal="pressed" from="PauseScreen/Control/MenuBox/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
 [connection signal="pressed" from="GameOverScreen/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
 [connection signal="pressed" from="GameOverScreen/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
 [connection signal="vida_terminou" from="Player" to="." method="_on_player_vida_terminou"]
