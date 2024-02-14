@@ -41,7 +41,7 @@ func _on_restart_game_button_pressed():
 	get_tree().reload_current_scene()
 
 func _on_exit_game_button_pressed():
-	get_tree().quit() # Replace with function body.
+	get_tree().quit()
 
 func _on_player_vida_terminou():
 	%GameOverScreen.visible = true

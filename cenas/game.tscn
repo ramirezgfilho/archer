@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bp5v5xxbheinb"]
+[gd_scene load_steps=23 format=3 uid="uid://bp5v5xxbheinb"]
 
 [ext_resource type="PackedScene" uid="uid://j0spv2qvop3u" path="res://cenas/player.tscn" id="1_fjghe"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_u6t0n"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://75m2jrmlgn7b" path="res://sprites/GUI/avatar.png" id="3_ar52p"]
 [ext_resource type="PackedScene" uid="uid://dtq1t3yhbxpwq" path="res://map/map2/FirstMap.tscn" id="3_fjh3o"]
 [ext_resource type="Texture2D" uid="uid://cm3wdt7rj0jr5" path="res://sprites/GUI/buttons/base.png" id="4_li3i3"]
+[ext_resource type="StyleBox" uid="uid://brxn2h182wv2s" path="res://styles/game.tres" id="5_333jj"]
 [ext_resource type="Texture2D" uid="uid://cor4kld3suqfx" path="res://sprites/GUI/buttons/restartButton.png" id="5_p3gl0"]
 [ext_resource type="Texture2D" uid="uid://co4vcf0kn8wvg" path="res://sprites/GUI/buttons/exitButton.png" id="6_v0cdm"]
 
@@ -65,19 +66,6 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j23vw"]
-bg_color = Color(0.490196, 0.631373, 0.752941, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-anti_aliasing = false
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvspl"]
 bg_color = Color(0.0980392, 0.705882, 0.498039, 1)
 border_width_left = 1
@@ -96,14 +84,11 @@ default_font = ExtResource("2_ho3d7")
 
 [sub_resource type="Theme" id="Theme_xuv4m"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17mqo"]
-bg_color = Color(0.6, 1, 0.6, 1)
-
 [sub_resource type="Curve2D" id="Curve2D_w51a0"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -431, -346, 0, 0, 0, 0, 18, -348, 0, 0, 0, 0, 20, -345, 0, 0, 0, 0, 16, -71, 0, 0, 0, 0, 290, -74, 0, 0, 0, 0, 300, 205, 0, 0, 0, 0, -218, 208, 0, 0, 0, 0, -228, 51, 0, 0, 0, 0, -425, 46, 0, 0, 0, 0, -431, -346)
+"points": PackedVector2Array(0, 0, 0, 0, -431, -346, 0, 0, 0, 0, 18, -348, 0, 0, 0, 0, 20, -345, 0, 0, 0, 0, 16, -71, 0, 0, 0, 0, 290, -74, 0, 0, 0, 0, 300, 205, 0, 0, 0, 0, 299, 207, 0, 0, 0, 0, -218, 208, 0, 0, 0, 0, -228, 51, 0, 0, 0, 0, -425, 46, 0, 0, 0, 0, -431, -346)
 }
-point_count = 10
+point_count = 11
 
 [sub_resource type="Curve2D" id="Curve2D_r0k7s"]
 _data = {
@@ -132,9 +117,11 @@ autostart = true
 
 [node name="Control" type="Control" parent="GUI"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PlayerInfoBox" type="Panel" parent="GUI/Control"]
 layout_mode = 0
@@ -230,15 +217,15 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 547.0
-offset_top = 6.0
-offset_right = 593.0
-offset_bottom = 29.0
+offset_left = -53.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = 30.0
 grow_horizontal = 0
 mouse_force_pass_scroll_events = false
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 8
-theme_override_styles/normal = SubResource("StyleBoxFlat_j23vw")
+theme_override_styles/normal = ExtResource("5_333jj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xvspl")
 action_mode = 0
 text = "Pause"
@@ -250,12 +237,15 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 280.0
-offset_top = 3.0
-offset_right = 322.0
-offset_bottom = 19.0
+offset_left = -21.0
+offset_top = 7.0
+offset_right = 21.0
+offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("5_333jj")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PauseScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -287,27 +277,53 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -133.0
-offset_top = -114.0
-offset_right = 146.0
-offset_bottom = 98.0
+offset_left = -81.5
+offset_top = -62.0
+offset_right = 81.5
+offset_bottom = 62.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = SubResource("Theme_iwdqs")
+theme_override_styles/panel = ExtResource("5_333jj")
 
 [node name="PauseText" type="Label" parent="PauseScreen/Control/MenuBox"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -44.0
+offset_top = 9.0
 offset_right = 44.0
-offset_bottom = 8.0
+offset_bottom = 17.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 8
 text = "Game Paused"
+
+[node name="RestartGameButton" type="Button" parent="PauseScreen/Control/MenuBox"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -28.0
+offset_right = 32.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_ho3d7")
+theme_override_font_sizes/font_size = 8
+text = "Restart"
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="ContinueButton" type="Button" parent="PauseScreen/Control/MenuBox"]
 texture_filter = 1
@@ -325,33 +341,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 theme = SubResource("Theme_xuv4m")
-theme_override_colors/font_hover_color = Color(0, 0.615686, 0.588235, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.992157, 0.588235, 1)
 theme_override_fonts/font = ExtResource("2_ho3d7")
 theme_override_font_sizes/font_size = 8
-theme_override_styles/hover = SubResource("StyleBoxFlat_17mqo")
 text = "Continue"
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="RestartGameButton" type="Button" parent="PauseScreen/Control/MenuBox"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -22.0
-offset_right = 60.0
-offset_bottom = 22.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("2_ho3d7")
-theme_override_font_sizes/font_size = 8
-text = "Restart"
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -359,18 +353,19 @@ expand_icon = true
 [node name="ExitGameButton" type="Button" parent="PauseScreen/Control/MenuBox"]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.664
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.664
-offset_left = -53.0
-offset_top = -9.412
-offset_right = 53.0
-offset_bottom = 34.588
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 12.0
+offset_right = 20.0
+offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_ho3d7")
 theme_override_font_sizes/font_size = 8
 text = "Exit"
@@ -513,8 +508,8 @@ rotation = 0.0250087
 [connection signal="timeout" from="LevelController/GameTimer" to="LevelController" method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GUI/Control/ScoreTimer" to="LevelController" method="_on_score_timer_timeout"]
 [connection signal="pressed" from="GUI/Control/PauseButton" to="." method="_on_pause_button_pressed"]
-[connection signal="pressed" from="PauseScreen/Control/MenuBox/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="PauseScreen/Control/MenuBox/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
+[connection signal="pressed" from="PauseScreen/Control/MenuBox/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="PauseScreen/Control/MenuBox/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
 [connection signal="pressed" from="GameOverScreen/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
 [connection signal="pressed" from="GameOverScreen/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
