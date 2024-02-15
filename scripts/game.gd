@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var player = get_node("Player")
+@onready var bow = get_node("Player/BasicBow")
+@onready var arrow = get_node("Arrow")
 
 func spawn_mob():
 	var new_mob = preload("res://cenas/orc.tscn").instantiate()
@@ -8,26 +10,11 @@ func spawn_mob():
 	new_mob.global_position = %PathFollow2DAreaOne.global_position
 	add_child(new_mob)
 	
-	var new_mob2 = preload("res://cenas/orc.tscn").instantiate()
-	%PathFollow2DAreaTwo.progress_ratio = randf()
-	new_mob2.global_position = %PathFollow2DAreaTwo.global_position
-	add_child(new_mob2)
-	
-	var new_mob3 = preload("res://cenas/orc.tscn").instantiate()
-	%PathFollow2DAreaThree.progress_ratio = randf()
-	new_mob3.global_position = %PathFollow2DAreaThree.global_position
-	add_child(new_mob3)
-	
 func spawn_cogumelo():
 	var new_cog = preload("res://cenas/cogumelo.tscn").instantiate()
 	%CogumeloPosi1.progress_ratio = randf()
 	new_cog.global_position = %CogumeloPosi1.global_position
 	add_child(new_cog)
-	
-	var new_cog2 = preload("res://cenas/cogumelo.tscn").instantiate()
-	%CogumeloPosi2.progress_ratio = randf()
-	new_cog2.global_position = %CogumeloPosi2.global_position
-	add_child(new_cog2)
 	
 
 func _physics_process(delta):
@@ -65,3 +52,11 @@ func _on_child_exiting_tree(orc):
 
 func _on_cogumelo_timer_timeout():
 	spawn_cogumelo()
+
+
+func _on_attack_pressed():
+	bow.aumenta_dano()
+
+
+func _on_velocidade_pressed():
+	bow.aumenta_velocidade_tiro()

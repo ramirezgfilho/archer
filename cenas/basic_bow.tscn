@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/basic_bow.gd" id="1_il06o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_orkd7"]
-radius = 152.003
+radius = 289.663
 
 [node name="BasicBow" type="Area2D"]
 rotation = -0.0186637
@@ -22,6 +22,7 @@ position = Vector2(8.00279, -0.0746115)
 
 [node name="ArrowTimer" type="Timer" parent="."]
 unique_name_in_owner = true
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="ArrowTimer" to="." method="_on_arrow_timer_timeout"]

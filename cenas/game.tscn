@@ -1,27 +1,12 @@
-[gd_scene load_steps=23 format=3 uid="uid://bp5v5xxbheinb"]
+[gd_scene load_steps=19 format=3 uid="uid://bp5v5xxbheinb"]
 
 [ext_resource type="PackedScene" uid="uid://j0spv2qvop3u" path="res://cenas/player.tscn" id="1_fjghe"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_u6t0n"]
-[ext_resource type="Script" path="res://cenas/LevelController.gd" id="2_1qbbs"]
+[ext_resource type="Script" path="res://scripts/LevelController.gd" id="2_1qbbs"]
 [ext_resource type="FontFile" uid="uid://okptm2esfkrd" path="res://sprites/Fonts/PressStart2P-Regular.ttf" id="2_ho3d7"]
 [ext_resource type="Texture2D" uid="uid://75m2jrmlgn7b" path="res://sprites/GUI/avatar.png" id="3_ar52p"]
-[ext_resource type="PackedScene" uid="uid://dtq1t3yhbxpwq" path="res://map/map2/FirstMap.tscn" id="3_fjh3o"]
+[ext_resource type="PackedScene" uid="uid://dtq1t3yhbxpwq" path="res://cenas/FirstMap.tscn" id="3_fjh3o"]
 [ext_resource type="StyleBox" uid="uid://brxn2h182wv2s" path="res://styles/game.tres" id="5_333jj"]
-[ext_resource type="PackedScene" uid="uid://cx4vmp4ojrcv0" path="res://cenas/cogumelo.tscn" id="8_piuq8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n8pa"]
-bg_color = Color(0.490196, 0.631373, 0.752941, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_size = 1
-anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwiw7"]
 bg_color = Color(1, 1, 1, 1)
@@ -65,7 +50,7 @@ corner_radius_bottom_left = 2
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvspl"]
-bg_color = Color(0.0980392, 0.705882, 0.498039, 1)
+bg_color = Color(0.776471, 0.623529, 0.647059, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -84,21 +69,9 @@ default_font = ExtResource("2_ho3d7")
 
 [sub_resource type="Curve2D" id="Curve2D_w51a0"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -431, -346, 0, 0, 0, 0, 18, -348, 0, 0, 0, 0, 20, -345, 0, 0, 0, 0, 16, -71, 0, 0, 0, 0, 290, -74, 0, 0, 0, 0, 300, 205, 0, 0, 0, 0, 299, 207, 0, 0, 0, 0, -218, 208, 0, 0, 0, 0, -228, 51, 0, 0, 0, 0, -425, 46, 0, 0, 0, 0, -431, -346)
+"points": PackedVector2Array(0, 0, 0, 0, -456, -368, 0, 0, 0, 0, -448, 72, 0, 0, 0, 0, -256, 80, 0, 0, 0, 0, -256, 232, 0, 0, 0, 0, 272, 240, 0, 0, 0, 0, 272, 544, 0, 0, 0, 0, 128, 544, 0, 0, 0, 0, 128, 592, 0, 0, 0, 0, -32, 592, 0, 0, 0, 0, -32, 992, 0, 0, 0, 0, 256, 992, 0, 0, 0, 0, 256, 720, 0, 0, 0, 0, 560, 720, 0, 0, 0, 0, 560, 848, 0, 0, 0, 0, 1088, 848, 0, 0, 0, 0, 1088, 640, 0, 0, 0, 0, 768, 640, 0, 0, 0, 0, 768, 544, 0, 0, 0, 0, 560, 544, 0, 0, 0, 0, 560, 256, 0, 0, 0, 0, 752, 256, 0, 0, 0, 0, 752, 288, 0, 0, 0, 0, 1344, 288, 0, 0, 0, 0, 1344, -160, 0, 0, 0, 0, 752, -160, 0, 0, 0, 0, 752, -64, 0, 0, 0, 0, 320, -64, 0, 0, 0, 0, 320, -96, 0, 0, 0, 0, 48, -96, 0, 0, 0, 0, 48, -376, 0, 0, 0, 0, -456, -368)
 }
-point_count = 11
-
-[sub_resource type="Curve2D" id="Curve2D_r0k7s"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 760, -150, 0, 0, 0, 0, 1339, -157, 0, 0, 0, 0, 1339, 278, 0, 0, 0, 0, 762, 283, 0, 0, 0, 0, 758, 242, 0, 0, 0, 0, 548, 241, 0, 0, 0, 0, 547, -55, 0, 0, 0, 0, 759, -62, 0, 0, 0, 0, 760, -150)
-}
-point_count = 9
-
-[sub_resource type="Curve2D" id="Curve2D_meghi"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 55.2734, -375.018, 0, 0, 0, 0, 486.713, -364.226, 0, 0, 0, 0, 488.248, -159.18, 0, 0, 0, 0, 812.212, -153.784, 0, 0, 0, 0, 809.141, 99.825, 0, 0, 0, 0, 1308.14, 97.127, 0, 0, 0, 0, 1303.53, 655.607, 0, 0, 0, 0, 494.39, 652.909, 0, 0, 0, 0, 494.39, 296.777, 0, 0, 0, 0, 18.4245, 299.475, 0, 0, 0, 0, 15.3538, 1044.11, 0, 0, 0, 0, -417.621, 1017.13, 0, 0, 0, 0, -409.944, -21.5837, 0, 0, 0, 0, -159.679, -8.09387, 0, 0, 0, 0, -167.355, -148.388, 0, 0, 0, 0, 59.8796, -142.992, 0, 0, 0, 0, 55.2734, -375.018)
-}
-point_count = 17
+point_count = 31
 
 [sub_resource type="Curve2D" id="Curve2D_tjfee"]
 _data = {
@@ -139,7 +112,7 @@ offset_left = 7.0
 offset_top = 7.0
 offset_right = 110.0
 offset_bottom = 46.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_5n8pa")
+theme_override_styles/panel = ExtResource("5_333jj")
 
 [node name="AvatarFrame" type="Panel" parent="GUI/Control/PlayerInfoBox"]
 layout_mode = 1
@@ -284,6 +257,24 @@ theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = ExtResource("5_333jj")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="+attack" type="Button" parent="GUI/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 16.0
+offset_bottom = 64.0
+text = "+ attack"
+
+[node name="+velocidade" type="Button" parent="GUI/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 8.0
+offset_top = 88.0
+offset_right = 144.0
+offset_bottom = 112.0
+text = "+ velocidade"
 
 [node name="PauseScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -512,12 +503,6 @@ unique_name_in_owner = true
 position = Vector2(-208, -245)
 RUN_SPEED = 80.0
 
-[node name="Paredes" type="StaticBody2D" parent="."]
-visible = false
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Paredes"]
-polygon = PackedVector2Array(-473, 88, -260, 88, -260, 245, 75, 243, 75, 602, -38, 587, -38, 1003, 264, 1002, 261, 727, 554, 729, 553, 863, 1096, 860, 1094, 634, 774, 634, 775, 537, 565, 539, 567, 458, 267, 458, 267, 537, 122, 538, 120, 587, 100, 599, 100, 236, 325, 245, 326, 109, 327, 100, 540, 98, 541, 259, 747, 260, 748, 293, 1349, 292, 1349, -166, 746, -165, 748, -68, 538, -70, 539, 64, 539, 71, 325, 70, 322, -99, 53, -99, 52, -387, -471, -389, -472, 88, -606, 83, -611, -400, -606, -657, 1410, -657, 1410, 1253, -610, 1253, -607, 89)
-
 [node name="MobTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 2.6
@@ -530,28 +515,8 @@ curve = SubResource("Curve2D_w51a0")
 
 [node name="PathFollow2DAreaOne" type="PathFollow2D" parent="MobSpawners/Path2DAreaOne"]
 unique_name_in_owner = true
-position = Vector2(-163.854, -347.19)
-rotation = -0.00445431
-progress = 267.148
-
-[node name="Path2DAreaTwo" type="Path2D" parent="MobSpawners"]
-curve = SubResource("Curve2D_r0k7s")
-
-[node name="PathFollow2DAreaTwo" type="PathFollow2D" parent="MobSpawners/Path2DAreaTwo"]
-unique_name_in_owner = true
-position = Vector2(1318.76, 278.175)
-rotation = 3.13293
-progress = 1034.12
-
-[node name="Path2D2AreaThree" type="Path2D" parent="MobSpawners"]
-position = Vector2(240, 605)
-scale = Vector2(0.651308, 0.370649)
-curve = SubResource("Curve2D_meghi")
-
-[node name="PathFollow2DAreaThree" type="PathFollow2D" parent="MobSpawners/Path2D2AreaThree"]
-unique_name_in_owner = true
-position = Vector2(55.2734, -375.018)
-rotation = 0.0250087
+position = Vector2(-456, -368)
+rotation = 1.55262
 
 [node name="CogumeloSpawners" type="Node" parent="."]
 
@@ -560,6 +525,7 @@ wait_time = 15.0
 autostart = true
 
 [node name="CogumeloSpawner" type="Path2D" parent="CogumeloSpawners"]
+visible = false
 curve = SubResource("Curve2D_tjfee")
 
 [node name="CogumeloPosi1" type="PathFollow2D" parent="CogumeloSpawners/CogumeloSpawner"]
@@ -575,28 +541,12 @@ unique_name_in_owner = true
 position = Vector2(556, -43)
 rotation = 0.00913217
 
-[node name="Cogumelo" parent="." instance=ExtResource("8_piuq8")]
-position = Vector2(-231, -21)
-
-[node name="Cogumelo2" parent="." instance=ExtResource("8_piuq8")]
-position = Vector2(-260, -54)
-
-[node name="Cogumelo3" parent="." instance=ExtResource("8_piuq8")]
-position = Vector2(-191, -173)
-
-[node name="Cogumelo4" parent="." instance=ExtResource("8_piuq8")]
-position = Vector2(-217, -126)
-
-[node name="Cogumelo5" parent="." instance=ExtResource("8_piuq8")]
-position = Vector2(-168, -104)
-
-[node name="Cogumelo6" parent="." instance=ExtResource("8_piuq8")]
-position = Vector2(-154, -217)
-
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="timeout" from="LevelController/GameTimer" to="LevelController" method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GUI/Control/ScoreTimer" to="LevelController" method="_on_score_timer_timeout"]
 [connection signal="pressed" from="GUI/Control/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="GUI/Control/+attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="GUI/Control/+velocidade" to="." method="_on_velocidade_pressed"]
 [connection signal="pressed" from="PauseScreen/Control/MenuBox/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
 [connection signal="pressed" from="PauseScreen/Control/MenuBox/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="PauseScreen/Control/MenuBox/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
