@@ -53,10 +53,10 @@ func _on_child_exiting_tree(orc):
 func _on_cogumelo_timer_timeout():
 	spawn_cogumelo()
 
-
 func _on_attack_pressed():
 	bow.aumenta_dano()
-
+	%AttackValue.text = str(bow.basic_damage)
 
 func _on_velocidade_pressed():
 	bow.aumenta_velocidade_tiro()
+	%VelocityValue.text = str(bow.arrow_time)

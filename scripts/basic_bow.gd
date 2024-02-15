@@ -2,6 +2,8 @@ extends Area2D
 
 @export_group("Bow proprieties")
 @export var basic_damage = 1
+@export var arrow_time = 2
+
 var enemies_in_range
 
 func _physics_process(delta):
@@ -24,10 +26,11 @@ func _on_arrow_timer_timeout():
 		
 func aumenta_dano():
 	if basic_damage < 10: 
-		basic_damage += 1
+		basic_damage += 0.5
 	print(basic_damage)
 
 func aumenta_velocidade_tiro():
 	if %ArrowTimer.wait_time > 0.20: 
 		%ArrowTimer.wait_time -= 0.10
+		arrow_time = %ArrowTimer.wait_time
 	print(%ArrowTimer.wait_time)
