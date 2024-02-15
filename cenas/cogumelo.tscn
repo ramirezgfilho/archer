@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx4vmp4ojrcv0"]
+
+[ext_resource type="Script" path="res://cenas/cogumelo.gd" id="1_363j1"]
+[ext_resource type="Texture2D" uid="uid://c758a3wn2pxte" path="res://sprites/item/cogumelo.png" id="1_bnj4w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2f57r"]
+size = Vector2(8, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xuvkr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bnj4w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cogumelo" type="Area2D"]
+collision_layer = 256
+collision_mask = 256
+script = ExtResource("1_363j1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_2f57r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_xuvkr")
+offset = Vector2(1, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

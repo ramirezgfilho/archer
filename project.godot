@@ -10,9 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Archer"
+config/name="Dark Arrow: Monster Bounty Pursuit"
+config/description="Dark Arrow: Monster Bounty Pursuit"
 run/main_scene="res://cenas/game.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/image="res://sprites/screen/background2.png"
 config/icon="res://icon.svg"
 
 [display]
@@ -23,6 +25,7 @@ window/size/initial_position_type=2
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 window/vsync/vsync_mode=2
+mouse_cursor/custom_image="res://sprites/icons/bowIcon.png"
 
 [gui]
 
@@ -58,9 +61,9 @@ run={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 2d/snap/snap_2d_transforms_to_pixel=true
 2d/snap/snap_2d_vertices_to_pixel=true
 2d/sdf/oversize=0

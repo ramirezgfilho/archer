@@ -18,6 +18,17 @@ func spawn_mob():
 	new_mob3.global_position = %PathFollow2DAreaThree.global_position
 	add_child(new_mob3)
 	
+func spawn_cogumelo():
+	var new_cog = preload("res://cenas/cogumelo.tscn").instantiate()
+	%CogumeloPosi1.progress_ratio = randf()
+	new_cog.global_position = %CogumeloPosi1.global_position
+	add_child(new_cog)
+	
+	var new_cog2 = preload("res://cenas/cogumelo.tscn").instantiate()
+	%CogumeloPosi2.progress_ratio = randf()
+	new_cog2.global_position = %CogumeloPosi2.global_position
+	add_child(new_cog2)
+	
 
 func _physics_process(delta):
 	%PlayerHealth.value = player.health
@@ -50,3 +61,7 @@ func _on_player_vida_terminou():
 
 func _on_child_exiting_tree(orc):
 	%LevelController.aumenta_score(5)
+
+
+func _on_cogumelo_timer_timeout():
+	spawn_cogumelo()

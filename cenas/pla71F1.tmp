@@ -93,8 +93,13 @@ signal vida_terminou
 
 var basic_bow = preload(\"res://cenas/basic_bow.tscn\")
 
-var health = 100.0
+var health = 100.0 
 var stamina = 100.0
+var minHealth = 0 
+var maxHealth = 100
+
+var vida = clamp(vida, minHealth, maxHealth)
+
 
 func _physics_process(delta):
 	var direction = Input.get_vector(\"move_left\",\"move_right\",\"move_up\",\"move_down\")
@@ -142,14 +147,7 @@ func _on_stamina_recover_timeout():
 
 func _on_collect_weapon_box_area_entered(area):
 	if area.TIPO_ITEM == \"Cogumelo\":
-		if health < 100:
-			health += 20
-			print(health)
-			if health > 100.0:
-				health = 100.0
-				print(health)
-	print(health)
-
+		health += 20
 "
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4evv5"]
@@ -460,6 +458,9 @@ collision_layer = 261
 collision_mask = 257
 platform_floor_layers = 4294901761
 script = SubResource("GDScript_h6jlv")
+DAMAGE_RATE = null
+SPEED = null
+RUN_SPEED = null
 
 [node name="BasicBow" parent="." instance=ExtResource("81_0pnah")]
 
