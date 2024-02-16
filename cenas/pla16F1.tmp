@@ -130,7 +130,7 @@ func _physics_process(delta):
 		##Baixo
 		if velocity.y > 0:
 			%AnimatedSprite2D.play(\"walk_r\")
-		if velocity.y < 0: 
+		if velocity.y < 0: ^^ 
 			%AnimatedSprite2D.play(\"walk_up_r\")
 		if velocity.x < 0: 
 			%AnimatedSprite2D.play(\"walk_l\")
@@ -478,6 +478,10 @@ collision_layer = 325
 collision_mask = 321
 platform_floor_layers = 4294901761
 script = SubResource("GDScript_h6jlv")
+DAMAGE_RATE = null
+SPEED = null
+RUN_SPEED = null
+stamina_recovery_rate = null
 
 [node name="BasicBow" parent="." instance=ExtResource("81_0pnah")]
 

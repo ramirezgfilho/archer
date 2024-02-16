@@ -258,52 +258,6 @@ theme_override_styles/normal = ExtResource("5_333jj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="+attack" type="Button" parent="GUI/Control"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_left = 8.0
-offset_top = 88.0
-offset_right = 80.0
-offset_bottom = 104.0
-theme_override_font_sizes/font_size = 8
-text = "+ attack"
-
-[node name="+velocidade" type="Button" parent="GUI/Control"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_left = 8.0
-offset_top = 112.0
-offset_right = 112.0
-offset_bottom = 128.0
-theme_override_font_sizes/font_size = 8
-text = "+ velocidade"
-
-[node name="AttackValue" type="Label" parent="GUI/Control"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_left = 8.0
-offset_top = 48.0
-offset_right = 24.0
-offset_bottom = 56.0
-theme_override_font_sizes/font_size = 8
-text = "0
-"
-
-[node name="VelocityValue" type="Label" parent="GUI/Control"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_left = 40.0
-offset_top = 48.0
-offset_right = 56.0
-offset_bottom = 56.0
-theme_override_font_sizes/font_size = 8
-text = "0
-"
-
 [node name="PauseScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 process_mode = 3
@@ -524,12 +478,207 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="UpgradeSystem" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+
+[node name="Control" type="Control" parent="UpgradeSystem"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UpgradeSystem/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.34902)
+
+[node name="Panel" type="Panel" parent="UpgradeSystem/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -121.5
+offset_right = 143.0
+offset_bottom = 121.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("5_333jj")
+
+[node name="Label" type="Label" parent="UpgradeSystem/Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = 8.0
+offset_right = 28.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 8
+text = "Upgrade"
+
+[node name="+attack" type="Button" parent="UpgradeSystem/Control/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -68.0
+offset_right = -16.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "+ attack power"
+
+[node name="AttackValue" type="Label" parent="UpgradeSystem/Control/Panel/+attack"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 92.0
+offset_right = 100.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "0
+"
+
+[node name="+velocidade" type="Button" parent="UpgradeSystem/Control/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -44.0
+offset_right = -16.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "+ attack speed"
+
+[node name="VelocityValue" type="Label" parent="UpgradeSystem/Control/Panel/+velocidade"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 92.0
+offset_right = 116.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "2.0
+"
+
+[node name="Label" type="Label" parent="UpgradeSystem/Control/Panel/+velocidade/VelocityValue"]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 88.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 8
+text = "Seconds"
+
+[node name="IncreaseplayerSpeed" type="Button" parent="UpgradeSystem/Control/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 7.0
+offset_top = 101.5
+offset_right = 15.0
+offset_bottom = 109.5
+theme_override_font_sizes/font_size = 8
+text = "+ movement speed"
+
+[node name="speed_label" type="Label" parent="UpgradeSystem/Control/Panel/IncreaseplayerSpeed"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 152.0
+offset_top = 8.0
+offset_right = 192.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 8
+text = "100.0"
+
+[node name="IncreaseHealth" type="Button" parent="UpgradeSystem/Control/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 7.0
+offset_top = 125.5
+offset_right = 79.0
+offset_bottom = 141.5
+theme_override_font_sizes/font_size = 8
+text = "+ health"
+
+[node name="health_label" type="Label" parent="UpgradeSystem/Control/Panel/IncreaseHealth"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 152.0
+offset_top = 8.0
+offset_right = 192.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 8
+text = "100.0"
+
+[node name="IncreaseStamina" type="Button" parent="UpgradeSystem/Control/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 7.0
+offset_top = 149.5
+offset_right = 87.0
+offset_bottom = 165.5
+theme_override_font_sizes/font_size = 8
+text = "+ stamina"
+
+[node name="stamina_label" type="Label" parent="UpgradeSystem/Control/Panel/IncreaseStamina"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 152.0
+offset_top = 8.0
+offset_right = 192.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 8
+text = "100.0"
+
+[node name="IncreaseStaminaRecovery" type="Button" parent="UpgradeSystem/Control/Panel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 173.5
+offset_right = 159.0
+offset_bottom = 189.5
+theme_override_font_sizes/font_size = 8
+text = "+ stamina recovery"
+
 [node name="FirstMap" parent="." instance=ExtResource("3_fjh3o")]
 
 [node name="Player" parent="." instance=ExtResource("1_fjghe")]
 unique_name_in_owner = true
 position = Vector2(-208, -245)
-RUN_SPEED = 80.0
 
 [node name="MobTimer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -570,16 +719,21 @@ position = Vector2(556, -43)
 rotation = 0.00913217
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[connection signal="level_up" from="LevelController" to="." method="_on_level_controller_level_up"]
 [connection signal="timeout" from="LevelController/GameTimer" to="LevelController" method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GUI/Control/ScoreTimer" to="LevelController" method="_on_score_timer_timeout"]
 [connection signal="pressed" from="GUI/Control/PauseButton" to="." method="_on_pause_button_pressed"]
-[connection signal="pressed" from="GUI/Control/+attack" to="." method="_on_attack_pressed"]
-[connection signal="pressed" from="GUI/Control/+velocidade" to="." method="_on_velocidade_pressed"]
 [connection signal="pressed" from="PauseScreen/Control/MenuBox/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
 [connection signal="pressed" from="PauseScreen/Control/MenuBox/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="PauseScreen/Control/MenuBox/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
 [connection signal="pressed" from="GameOverScreen/MenuBox/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
 [connection signal="pressed" from="GameOverScreen/MenuBox/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
+[connection signal="pressed" from="UpgradeSystem/Control/Panel/+attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="UpgradeSystem/Control/Panel/+velocidade" to="." method="_on_velocidade_pressed"]
+[connection signal="pressed" from="UpgradeSystem/Control/Panel/IncreaseplayerSpeed" to="." method="_on_increaseplayer_speed_pressed"]
+[connection signal="pressed" from="UpgradeSystem/Control/Panel/IncreaseHealth" to="." method="_on_increase_health_pressed"]
+[connection signal="pressed" from="UpgradeSystem/Control/Panel/IncreaseStamina" to="." method="_on_increase_stamina_pressed"]
+[connection signal="pressed" from="UpgradeSystem/Control/Panel/IncreaseStaminaRecovery" to="." method="_on_increase_stamina_recovery_pressed"]
 [connection signal="vida_terminou" from="Player" to="." method="_on_player_vida_terminou"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="CogumeloSpawners/CogumeloTimer" to="." method="_on_cogumelo_timer_timeout"]

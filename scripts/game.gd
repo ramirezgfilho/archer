@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var player = get_node("Player")
 @onready var bow = get_node("Player/BasicBow")
-@onready var arrow = get_node("Arrow")
+
 
 func spawn_mob():
 	var new_mob = preload("res://cenas/orc.tscn").instantiate()
@@ -52,11 +52,48 @@ func _on_child_exiting_tree(orc):
 
 func _on_cogumelo_timer_timeout():
 	spawn_cogumelo()
+	
+func _on_level_controller_level_up():
+	%UpgradeSystem.visible = true
+	get_tree().paused = true
+
 
 func _on_attack_pressed():
 	bow.aumenta_dano()
 	%AttackValue.text = str(bow.basic_damage)
+	desativa_tela_upgrade()
 
 func _on_velocidade_pressed():
-	bow.aumenta_velocidade_tiro()
-	%VelocityValue.text = str(bow.arrow_time)
+	if bow.arrow_time <= 0.20:
+		%"+velocidade".disabled = true
+	else:
+		bow.aumenta_velocidade_tiro()
+		%VelocityValue.text = str(bow.arrow_time)
+		desativa_tela_upgrade()
+
+
+func _on_increaseplayer_speed_pressed():
+	player.aumenta_velocidade_movimento()
+	%speed_label.text = str(player.SPEED)
+	desativa_tela_upgrade()
+
+
+func _on_increase_health_pressed():
+	player.aumenta_vida()
+	%health_label.text = str(player.max_health)
+	desativa_tela_upgrade()
+
+func _on_increase_stamina_pressed():
+	player.aumenta_stamina()
+	%stamina_label.text = str(player.max_stamina)
+	desativa_tela_upgrade()
+
+
+func _on_increase_stamina_recovery_pressed():
+	player.aumenta_recuperacao_stamina()
+	desativa_tela_upgrade()
+
+
+func desativa_tela_upgrade():
+	%UpgradeSystem.visible = false
+	get_tree().paused = false

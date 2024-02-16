@@ -1,5 +1,6 @@
 extends Node
 
+signal level_up
 var score = 0
 @export var level_timer = 0
 
@@ -8,6 +9,9 @@ func _on_score_timer_timeout():
 
 func aumenta_score(valor):
 	score += valor
+	if score % 100 == 0:
+		level_up.emit()
+		
 	
 func _physics_process(delta):
 	%Score.set_text(str(score))

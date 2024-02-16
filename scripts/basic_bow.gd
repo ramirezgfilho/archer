@@ -27,10 +27,11 @@ func _on_arrow_timer_timeout():
 func aumenta_dano():
 	if basic_damage < 10: 
 		basic_damage += 0.5
-	print(basic_damage)
+	print("O dano é: ", basic_damage)
 
 func aumenta_velocidade_tiro():
 	if %ArrowTimer.wait_time > 0.20: 
 		%ArrowTimer.wait_time -= 0.10
 		arrow_time = %ArrowTimer.wait_time
-	print(%ArrowTimer.wait_time)
+	print("O tempo para atirar é: ", %ArrowTimer.wait_time)
+

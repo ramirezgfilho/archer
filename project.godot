@@ -25,7 +25,6 @@ window/size/mode=2
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 window/vsync/vsync_mode=2
-mouse_cursor/custom_image="res://sprites/icons/bowIcon.png"
 
 [gui]
 
