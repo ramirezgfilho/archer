@@ -260,6 +260,7 @@ vertical_alignment = 1
 
 [node name="+attack" type="Button" parent="GUI/Control"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 8.0
 offset_top = 88.0
@@ -270,6 +271,7 @@ text = "+ attack"
 
 [node name="+velocidade" type="Button" parent="GUI/Control"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 8.0
 offset_top = 112.0
@@ -280,6 +282,7 @@ text = "+ velocidade"
 
 [node name="AttackValue" type="Label" parent="GUI/Control"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 8.0
 offset_top = 48.0
@@ -291,6 +294,7 @@ text = "0
 
 [node name="VelocityValue" type="Label" parent="GUI/Control"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 40.0
 offset_top = 48.0
