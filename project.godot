@@ -15,7 +15,7 @@ config/description="Dark Arrow: Monster Bounty Pursuit"
 run/main_scene="res://cenas/game.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/image="res://sprites/screen/background2.png"
-config/icon="res://icon.svg"
+config/icon="res://sprites/icons/icon.svg"
 
 [display]
 

@@ -88,19 +88,19 @@ script/source = "extends CharacterBody2D
 signal vida_terminou
 
 @export var DAMAGE_RATE = 15.0
-@export var SPEED = 100.0
+@export var SPEED = 70.0
 @export var RUN_SPEED = 110.0
 @export var stamina_recovery_rate = 1.0
 
 var basic_bow = preload(\"res://cenas/basic_bow.tscn\")
 
-var health = 100.0
-var stamina = 100.0
-var max_stamina = 100.0
-var max_health = 100.0
+var health = 80.0
+var stamina = 80.0
+var max_stamina = 80.0
+var max_health = 80.0
 
 func _physics_process(delta):
-	var direction = Input.get_vector(\"move_left\",\"move_right\",\"move_up\",\"move_down\")
+	var direction = Input.get_vector(\"move_left\",\"move_right\",\"move_up\",\"move_down\").normalized()
 	if Input.get_action_raw_strength(\"run\", true):
 		if stamina > 0:
 			velocity = direction * RUN_SPEED
@@ -125,19 +125,8 @@ func _physics_process(delta):
 	##Única forma que consegui de animar as diversas posições
 	if velocity.length() > 0.0:
 		%CPUParticles2D.emitting = true 
-		print(velocity)
-		
-		##Baixo
-		if velocity.y > 0:
-			%AnimatedSprite2D.play(\"walk_r\")
-		if velocity.y < 0: 
-			%AnimatedSprite2D.play(\"walk_up_r\")
-		if velocity.x < 0: 
-			%AnimatedSprite2D.play(\"walk_l\")
-		if velocity.x > 0: 
-			%AnimatedSprite2D.play(\"walk_r\")
-		
-			
+		%AnimatedSprite2D.play(\"walk_r\")
+
 ##Fução para recuperação da Stamina
 func _on_stamina_recover_timeout():
 	if stamina < max_stamina:
@@ -489,7 +478,7 @@ limit_smoothed = true
 unique_name_in_owner = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_4evv5")
-animation = &"idle_up_l"
+animation = &"walk_r"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 6.3777e-06)

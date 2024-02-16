@@ -258,6 +258,119 @@ theme_override_styles/normal = ExtResource("5_333jj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="NewGameScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+
+[node name="Control" type="Control" parent="NewGameScreen"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 644.0
+offset_bottom = 364.0
+
+[node name="Fundo" type="ColorRect" parent="NewGameScreen/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.152941, 0.266667, 1)
+
+[node name="MenuBox" type="Panel" parent="NewGameScreen/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.5
+offset_top = -46.0
+offset_right = 81.5
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_iwdqs")
+theme_override_styles/panel = ExtResource("5_333jj")
+
+[node name="ExitGameButton" type="Button" parent="NewGameScreen/Control/MenuBox"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 8.0
+offset_right = 20.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ho3d7")
+theme_override_font_sizes/font_size = 8
+text = "Exit"
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="NewGameButton" type="Button" parent="NewGameScreen/Control/MenuBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -10.0
+offset_right = 36.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "New game"
+flat = true
+
+[node name="Label" type="Label" parent="NewGameScreen/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 16.0
+offset_right = 20.0
+offset_bottom = 32.0
+grow_horizontal = 2
+text = "Dark Arrow: Monster Bounty Pursuit"
+
+[node name="BasicTutorial" type="Label" parent="NewGameScreen"]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 58.0
+offset_right = 112.0
+offset_bottom = 122.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 8
+text = "Kill the horde of monsters
+to clean the map.
+Use w, s, a, d to move.
+Survive and upgrade you hero 
+to finish the game. "
+
 [node name="PauseScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 process_mode = 3
@@ -481,6 +594,7 @@ expand_icon = true
 [node name="UpgradeSystem" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 process_mode = 3
+visible = false
 
 [node name="Control" type="Control" parent="UpgradeSystem"]
 layout_mode = 3
@@ -674,6 +788,103 @@ offset_bottom = 189.5
 theme_override_font_sizes/font_size = 8
 text = "+ stamina recovery"
 
+[node name="GameEndScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+
+[node name="Fundo" type="ColorRect" parent="GameEndScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.376471)
+
+[node name="MenuBox" type="Panel" parent="GameEndScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.5
+offset_top = -62.0
+offset_right = 81.5
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_iwdqs")
+theme_override_styles/panel = ExtResource("5_333jj")
+
+[node name="GameOverText" type="Label" parent="GameEndScreen/MenuBox"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -36.0
+offset_right = 68.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "Conguratulations, 
+you have finished 
+the game!
+"
+
+[node name="RestartGameButton" type="Button" parent="GameEndScreen/MenuBox"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = 12.0
+offset_right = 32.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ho3d7")
+theme_override_font_sizes/font_size = 8
+text = "Play again!"
+flat = true
+icon_alignment = 1
+
+[node name="ExitGameButton" type="Button" parent="GameEndScreen/MenuBox"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = 36.0
+offset_right = 16.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ho3d7")
+theme_override_font_sizes/font_size = 8
+text = "Exit"
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [node name="FirstMap" parent="." instance=ExtResource("3_fjh3o")]
 
 [node name="Player" parent="." instance=ExtResource("1_fjghe")]
@@ -719,10 +930,13 @@ position = Vector2(556, -43)
 rotation = 0.00913217
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[connection signal="game_end" from="LevelController" to="." method="_on_level_controller_game_end"]
 [connection signal="level_up" from="LevelController" to="." method="_on_level_controller_level_up"]
 [connection signal="timeout" from="LevelController/GameTimer" to="LevelController" method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GUI/Control/ScoreTimer" to="LevelController" method="_on_score_timer_timeout"]
 [connection signal="pressed" from="GUI/Control/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="NewGameScreen/Control/MenuBox/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
+[connection signal="pressed" from="NewGameScreen/Control/MenuBox/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="PauseScreen/Control/MenuBox/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
 [connection signal="pressed" from="PauseScreen/Control/MenuBox/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="PauseScreen/Control/MenuBox/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
@@ -734,6 +948,8 @@ rotation = 0.00913217
 [connection signal="pressed" from="UpgradeSystem/Control/Panel/IncreaseHealth" to="." method="_on_increase_health_pressed"]
 [connection signal="pressed" from="UpgradeSystem/Control/Panel/IncreaseStamina" to="." method="_on_increase_stamina_pressed"]
 [connection signal="pressed" from="UpgradeSystem/Control/Panel/IncreaseStaminaRecovery" to="." method="_on_increase_stamina_recovery_pressed"]
+[connection signal="pressed" from="GameEndScreen/MenuBox/RestartGameButton" to="." method="_on_restart_game_button_pressed"]
+[connection signal="pressed" from="GameEndScreen/MenuBox/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
 [connection signal="vida_terminou" from="Player" to="." method="_on_player_vida_terminou"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="CogumeloSpawners/CogumeloTimer" to="." method="_on_cogumelo_timer_timeout"]

@@ -1,8 +1,12 @@
 extends Node
 
+
+signal game_end
 signal level_up
-var score = 0
+
 @export var level_timer = 0
+
+var score = 0
 
 func _on_score_timer_timeout():
 	aumenta_score(1)
@@ -22,6 +26,8 @@ func _on_game_timer_timeout():
 	if(%MobTimer.wait_time > 0.6):
 		if(level_timer % 60 == 0):
 			diminui_tempo_mob()	
+	if level_timer >= 1800:
+		game_end.emit()
 
 func diminui_tempo_mob():
 	%MobTimer.wait_time -= 0.10

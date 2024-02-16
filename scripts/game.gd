@@ -4,6 +4,9 @@ extends Node2D
 @onready var bow = get_node("Player/BasicBow")
 
 
+func _ready():
+	get_tree().paused = true
+
 func spawn_mob():
 	var new_mob = preload("res://cenas/orc.tscn").instantiate()
 	%PathFollow2DAreaOne.progress_ratio = randf()
@@ -80,11 +83,13 @@ func _on_increaseplayer_speed_pressed():
 
 func _on_increase_health_pressed():
 	player.aumenta_vida()
+	%PlayerHealth.max_value = player.max_health
 	%health_label.text = str(player.max_health)
 	desativa_tela_upgrade()
 
 func _on_increase_stamina_pressed():
 	player.aumenta_stamina()
+	%PlayerStamina.max_value = player.max_stamina
 	%stamina_label.text = str(player.max_stamina)
 	desativa_tela_upgrade()
 
@@ -97,3 +102,17 @@ func _on_increase_stamina_recovery_pressed():
 func desativa_tela_upgrade():
 	%UpgradeSystem.visible = false
 	get_tree().paused = false
+
+
+func _on_level_controller_game_end():
+	%GameEndScreen.visible = true
+	get_tree().paused = true
+
+
+func _on_tutorial_timer_timeout():
+	%BasicTutorial.visible = false
+
+
+func _on_new_game_button_pressed():
+	get_tree().paused = false
+	%NewGameScreen.visible = false
