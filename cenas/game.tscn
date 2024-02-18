@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bp5v5xxbheinb"]
+[gd_scene load_steps=20 format=3 uid="uid://bp5v5xxbheinb"]
 
 [ext_resource type="PackedScene" uid="uid://j0spv2qvop3u" path="res://cenas/player.tscn" id="1_fjghe"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_u6t0n"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://75m2jrmlgn7b" path="res://sprites/GUI/avatar.png" id="3_ar52p"]
 [ext_resource type="PackedScene" uid="uid://dtq1t3yhbxpwq" path="res://cenas/FirstMap.tscn" id="3_fjh3o"]
 [ext_resource type="StyleBox" uid="uid://brxn2h182wv2s" path="res://styles/game.tres" id="5_333jj"]
+[ext_resource type="AudioStream" uid="uid://dkgbtobt1kin2" path="res://resources/music/Goblins_Dance_(Battle).wav" id="8_svp62"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwiw7"]
 bg_color = Color(1, 1, 1, 1)
@@ -928,6 +929,10 @@ curve = SubResource("Curve2D_mp0fc")
 unique_name_in_owner = true
 position = Vector2(556, -43)
 rotation = 0.00913217
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_svp62")
+autoplay = true
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="game_end" from="LevelController" to="." method="_on_level_controller_game_end"]

@@ -80,7 +80,6 @@ func _on_increaseplayer_speed_pressed():
 	%speed_label.text = str(player.SPEED)
 	desativa_tela_upgrade()
 
-
 func _on_increase_health_pressed():
 	player.aumenta_vida()
 	%PlayerHealth.max_value = player.max_health
@@ -93,25 +92,20 @@ func _on_increase_stamina_pressed():
 	%stamina_label.text = str(player.max_stamina)
 	desativa_tela_upgrade()
 
-
 func _on_increase_stamina_recovery_pressed():
 	player.aumenta_recuperacao_stamina()
 	desativa_tela_upgrade()
-
 
 func desativa_tela_upgrade():
 	%UpgradeSystem.visible = false
 	get_tree().paused = false
 
-
 func _on_level_controller_game_end():
 	%GameEndScreen.visible = true
 	get_tree().paused = true
 
-
 func _on_tutorial_timer_timeout():
 	%BasicTutorial.visible = false
-
 
 func _on_new_game_button_pressed():
 	get_tree().paused = false

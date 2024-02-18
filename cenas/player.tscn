@@ -547,5 +547,7 @@ scale = Vector2(0.88, 0.88)
 shape = SubResource("CircleShape2D_f7ra3")
 debug_color = Color(0, 0.639216, 0.34902, 0.419608)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="timeout" from="StaminaBar/StaminaRecover" to="." method="_on_stamina_recover_timeout"]
 [connection signal="area_entered" from="CollectWeaponBox" to="." method="_on_collect_weapon_box_area_entered"]
