@@ -6,7 +6,8 @@ extends Node2D
 
 func _ready():
 	get_tree().paused = true
-
+	%PlayerHealth.max_value = player.max_health
+	%PlayerStamina.max_value = player.max_stamina
 func spawn_mob():
 	var new_mob = preload("res://cenas/orc.tscn").instantiate()
 	%PathFollow2DAreaOne.progress_ratio = randf()

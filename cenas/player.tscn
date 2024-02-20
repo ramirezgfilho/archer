@@ -472,7 +472,11 @@ script = SubResource("GDScript_h6jlv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 texture_filter = 1
+process_callback = 0
 limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

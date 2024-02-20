@@ -13,7 +13,7 @@ func _on_score_timer_timeout():
 
 func aumenta_score(valor):
 	score += valor
-	if score % 100 == 0:
+	if score % 200 == 0:
 		level_up.emit()
 		
 	

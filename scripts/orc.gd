@@ -10,7 +10,7 @@ var life = 3
 #Define o processo de física
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position).normalized()
-	velocity = direction * 50
+	velocity = direction * 65
 	move_and_slide()
 	#Armazenando na variável direction a posição do jogador.
 	#De fato movendo mob
